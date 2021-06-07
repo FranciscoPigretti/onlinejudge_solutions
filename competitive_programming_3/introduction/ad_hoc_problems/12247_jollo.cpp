@@ -20,7 +20,8 @@ b < y < c:
 #include <iostream> // cin, cout
 #include <cstdio>	// scanf, printf
 #include <array>
-#include <algorithm>
+#include <algorithm>  // sort
+
 using namespace std;
 
 array<int, 3> princesa;
