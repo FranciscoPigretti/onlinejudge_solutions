@@ -20,7 +20,7 @@ b < y < c:
 #include <iostream> // cin, cout
 #include <cstdio>	// scanf, printf
 #include <array>
-#include <algorithm>  // sort
+#include <algorithm> // sort
 
 using namespace std;
 
@@ -47,7 +47,7 @@ int valorMayorPosibleQue(int valor)
 int main()
 {
 	int a, b, c, x, y;
-	
+
 	while (scanf("%d %d %d %d %d", &a, &b, &c, &x, &y), (a || b || c || x || y))
 	{
 		princesa[0] = a;
@@ -71,16 +71,14 @@ int main()
 				else
 					cout << valorMayorPosibleQue(C) << endl;
 			}
-		} 
+		}
 		else
 		{
-			if ((B < Y) && (Y < C))
-			{
-				if (B < X)
-					cout << valorMayorPosibleQue(B) << endl;
-				else
-					cout << "-1" << endl;
-			}
+			if (B < X) // resumido haxor de (B<X && B<Y)
+				cout << valorMayorPosibleQue(B) << endl;
+			else
+				cout << "-1" << endl;
 		}
 	}
 }
+
