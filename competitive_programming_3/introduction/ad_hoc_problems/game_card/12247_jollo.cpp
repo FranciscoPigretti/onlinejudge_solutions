@@ -4,6 +4,19 @@ $ PROBLEM=11172_relational_operator
 $ g++ -o ${PROBLEM}.out -lm -lcrypt -O2 -std=c++11 -pipe -DONLINE_JUDGE ${PROBLEM}.cpp && ./${PROBLEM}.out < ${PROBLEM}.txt 
 
 /*
+EDIT: al final es más simple, ver el código.
+
+En cada partida hay que mirar el peor caso, es decir, mi mejor carta contra su peor carta, y la X contra la menor que me gana. 
+
+ABCXY  -> no necesito nada, gano siemrpe
+ABXCY  -> una gano siempre. Puedo "gastar" Y con A, pero la otra la gano, necesito >B.
+AXBCY -> una gano siempre. Puedo "gastar" Y con A, pero luego me gana, necesito >B.
+XABCY -> idem anterior.
+
+ABXYC -> Peor caso: le gana a Y con C, y luego gano una de las otras dos, necesito ganar la tercera con >B
+AXBYC -> -1 y a partir de acá siempre es -1 porque no puedo asegurar la victoria
+AXYBC -> -1 ...
+
 c < y: (una victoria asegurada)
 	c < x: segunda asegurada, listo, devuelvo la minima posible
 	x < c:   
