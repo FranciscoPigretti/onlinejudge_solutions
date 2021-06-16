@@ -11,10 +11,7 @@
             "program": "${fileDirname}/${fileBasenameNoExtension}.out",
             "args": [
                 "<",
-                "${fileDirname}/${fileBasenameNoExtension}.input",
-                "|",
-                "tee",
-                "${fileDirname}/${fileBasenameNoExtension}.output"
+                "${fileDirname}/${fileBasenameNoExtension}.input"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
