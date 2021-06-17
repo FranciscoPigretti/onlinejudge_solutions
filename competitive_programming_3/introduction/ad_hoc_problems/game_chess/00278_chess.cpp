@@ -95,54 +95,24 @@ using namespace std;
 
 int knights(int n, int m)
 {
-    int menor = (n < m) ? n : m;
+    int a = ceil((float)n / 2);
+    int b = floor((float)n / 2);
+    int c = ceil((float)m / 2);
+    int d = floor((float)m/2);
 
-    int count = menor;
-
-    for (int i = n - 2; i >= 1; i = i - 2)
-    {
-        count += i;
-    }
-
-    for (int i = m - 2; i >= 1; i = i - 2)
-    {
-        count += i;
-    }
-
-    return count;
+    return (a*c)+(b*d);   
 }
 
 int Kings(int n, int m)
 {
-    int a = ceil(n / 2);
-    int b = ceil(m / 2);
+    int a = ceil((float)n / 2);
+    int b = ceil((float)m / 2);
     return a * b;
 }
 
-int Queens(int &n, int &m)
+int Queens(int n, int m)
 {
-    int menor = (n < m) ? n : m;
-    int mayor = (m > n) ? m : n;
-
-    if (mayor == 5)
-    {
-        return 5;
-    }
-    else if (menor == 1)
-    {
-        return 1;
-    }
-    else
-    {
-        if ((mayor == menor) || (mayor == menor + 1))
-        {
-            return mayor - 1;
-        }
-        else
-        {
-            return menor;
-        }
-    }
+    return  (n < m) ? n : m;    
 }
 
 int main()
@@ -167,7 +137,7 @@ int main()
         }
         if (chesspiece == 'Q')
         {
-            cout << "Case " << n << " " << m << ":" ;
+            // cout << "Case " << n << " " << m << ":" ;
             int res = Queens(n, m);
             cout << res << endl;
         }
