@@ -1,6 +1,8 @@
 #include <iostream> // cin, cout
 #include <cstdio>   // scanf, printf
 #include <cmath>    // ceil(x)
+#include <utility> // swap
+
 
 using namespace std;
 
@@ -9,6 +11,7 @@ int main()
     int testCases;
     scanf("%d\n", &testCases);
 
+    
     int r, c, n;
 
     while (testCases--)
@@ -17,6 +20,7 @@ int main()
         char board_pre[r][c];
         char board_post[r][c];
 
+         
 
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
@@ -59,7 +63,8 @@ int main()
                 if (board_pre[i][j] == 'P') {
                     
                 }
-                board_pre = board_post;
+                std::swap(board_pre, board_post);
+
             }
         }
 
