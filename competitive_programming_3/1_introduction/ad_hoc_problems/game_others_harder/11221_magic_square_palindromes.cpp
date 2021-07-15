@@ -18,7 +18,7 @@ int indexOfMatrix(int row, int column, int size) {
     return (row * size) + column;
 }
 
-bool is_palindrome_from_1_1_down_left(string line) {
+bool is_palindrome_from_1_1_down_right(string line) {
     int lado = (int) sqrt(line.length());
 
     int iter = 0;
@@ -73,10 +73,21 @@ bool is_palindrome_from_K_K_up_left(string line) {
 }
 
 bool isMagic(string line) {
-    return is_palindrome_from_1_1_down_left(line) 
+    return is_palindrome_from_1_1_down_right(line) 
         && is_palindrome_from_K_K_left_up(line) 
         && is_palindrome_from_K_K_up_left(line);
 }
+
+void remove_whitespace_and_punctuation(string& line) {
+    line.erase(remove(line.begin(), line.end(), ' '), line.end());
+    line.erase(remove(line.begin(), line.end(), '.'), line.end());
+    line.erase(remove(line.begin(), line.end(), '('), line.end());
+    line.erase(remove(line.begin(), line.end(), ')'), line.end());
+    line.erase(remove(line.begin(), line.end(), ','), line.end());
+    line.erase(remove(line.begin(), line.end(), '?'), line.end());
+    line.erase(remove(line.begin(), line.end(), '!'), line.end());
+}
+
 
 int main()
 {
@@ -93,13 +104,7 @@ int main()
         getline(cin, line);
 
         if (DEBUG) cout << line << endl;
-        line.erase(remove(line.begin(), line.end(), ' '), line.end());
-        line.erase(remove(line.begin(), line.end(), '.'), line.end());
-        line.erase(remove(line.begin(), line.end(), '('), line.end());
-        line.erase(remove(line.begin(), line.end(), ')'), line.end());
-        line.erase(remove(line.begin(), line.end(), ','), line.end());
-        line.erase(remove(line.begin(), line.end(), '?'), line.end());
-        line.erase(remove(line.begin(), line.end(), '!'), line.end());
+        remove_whitespace_and_punctuation(line);
         if (DEBUG) cout << line << endl;
 
         if (isSquare(line)){
@@ -110,7 +115,6 @@ int main()
             }
         } else {
             cout << "No magic :(" << endl;
-        }
-    
+        }    
     }
 }
