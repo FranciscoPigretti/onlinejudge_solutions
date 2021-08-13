@@ -20,9 +20,10 @@ int main()
 
         if (par) {
             auto right = v.begin() + v.size()/2;
-            auto left = v.begin() + v.size()/2 - 1;
+            auto left = v.begin() + v.size()/2 - 1;                  
             std::nth_element(v.begin(), left, v.end()); 
             int left_int = v[v.size()/2 - 1];
+
             std::nth_element(v.begin(), right, v.end()); 
             int right_int = v[v.size()/2] ;
             cout << (left_int + right_int)/2 << endl;
@@ -34,3 +35,9 @@ int main()
         par = !par;         
     }   
 }
+
+
+
+
+
+
