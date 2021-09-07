@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 int main() {
 
     int sets;
@@ -80,19 +79,4 @@ int main() {
             i = i % countries;
         }
     }
-
-    
-    
-    // 2 minutos para ir de una estación a otra
-
-    // descargar
-   /*  while carrier
-        1 minuto más
-        if (carrier.top() == i)
-            put in platform A
-        else
-            put in queue */
-
-    // cargar de B hasta que el stack esté lleno o la queue vacía
-
 }
